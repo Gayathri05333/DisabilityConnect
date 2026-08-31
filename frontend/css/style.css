@@ -1,0 +1,230 @@
+/* =====================================================
+   DisabilityConnect - Global Styles
+   Accessibility-themed: high contrast, large touch targets,
+   clear focus states, readable typography.
+   ===================================================== */
+
+:root {
+    --primary: #4A47A3;      /* deep accessible purple */
+    --primary-dark: #35337a;
+    --accent: #17A398;       /* teal accent */
+    --danger: #E63946;       /* SOS red */
+    --warning: #F4A261;
+    --bg-light: #F5F6FA;
+    --text-dark: #1F2333;
+    --text-muted: #5b5f73;
+    --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 { font-weight: 700; color: var(--text-dark); }
+
+a { text-decoration: none; }
+
+/* Focus visibility for keyboard navigation */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-dc {
+    background: var(--primary);
+    padding: 0.9rem 1.5rem;
+}
+.navbar-dc .navbar-brand {
+    color: #fff !important;
+    font-weight: 800;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.navbar-dc .nav-link {
+    color: #eceafc !important;
+    font-weight: 600;
+    padding: 0.5rem 0.9rem !important;
+    border-radius: 8px;
+}
+.navbar-dc .nav-link:hover,
+.navbar-dc .nav-link.active {
+    background: rgba(255,255,255,0.15);
+    color: #fff !important;
+}
+
+/* ---------- Hero ---------- */
+.hero-banner {
+    background: linear-gradient(120deg, var(--primary), var(--accent));
+    color: #fff;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+.hero-banner h1 {
+    color: #fff;
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+}
+.hero-banner p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary-dc {
+    background: var(--primary);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 1.6rem;
+    border-radius: 10px;
+    font-size: 1.05rem;
+}
+.btn-primary-dc:hover { background: var(--primary-dark); color: #fff; }
+
+.btn-accent-dc {
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.75rem 1.6rem;
+    border-radius: 10px;
+}
+.btn-accent-dc:hover { background: #128a80; color: #fff; }
+
+.btn-outline-dc {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+}
+.btn-outline-dc:hover { background: #fff; color: var(--primary); }
+
+/* ---------- Sections ---------- */
+.section { padding: 4rem 1rem; }
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.section-title p { color: var(--text-muted); }
+
+/* ---------- Feature / Dashboard Cards ---------- */
+.dc-card {
+    background: #fff;
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 18px rgba(31, 35, 51, 0.08);
+    padding: 1.8rem 1.4rem;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.dc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 26px rgba(31, 35, 51, 0.14);
+}
+.dc-card .icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+.dc-card h5 { margin-bottom: 0.5rem; }
+.dc-card p { color: var(--text-muted); font-size: 0.95rem; }
+.dc-card a.stretched-link { color: inherit; }
+
+/* ---------- Place / Hospital Cards ---------- */
+.place-card, .hospital-card {
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(31,35,51,0.08);
+    height: 100%;
+}
+.place-card img, .hospital-card img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+}
+.place-card .body, .hospital-card .body { padding: 1.2rem; }
+.badge-category {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.35rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+.badge-access {
+    background: #e6f7f5;
+    color: #128a80;
+    font-weight: 700;
+    padding: 0.35rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+.badge-access.no { background: #fdeaea; color: var(--danger); }
+
+/* ---------- Footer ---------- */
+footer.dc-footer {
+    background: var(--text-dark);
+    color: #cfd2e0;
+    padding: 2.5rem 1rem 1.5rem;
+    text-align: center;
+}
+footer.dc-footer a { color: #fff; }
+
+/* ---------- Forms ---------- */
+.form-card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 22px rgba(31,35,51,0.1);
+    padding: 2.2rem;
+}
+.form-label { font-weight: 600; }
+.form-control, .form-select {
+    padding: 0.65rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #d7d9e4;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(74,71,163,0.15);
+}
+
+/* Skip link for keyboard/screen-reader users */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    background: var(--primary);
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    z-index: 2000;
+    border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+    left: 0;
+    top: 0;
+}
+
+.text-muted-dc { color: var(--text-muted); }
+.section-alt { background: #fff; }
